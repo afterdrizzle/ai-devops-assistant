@@ -1,0 +1,38 @@
+#!/bin/bash
+
+CMD1=$1
+CMD2=$2
+CMD3=$3
+
+echo "🤖 AI DevOps Assistant"
+echo ""
+
+if [ "$CMD1" == "deploy" ]; then
+
+    APP=$CMD2
+
+    echo "Deploying $APP to Kubernetes..."
+
+    kubectl create deployment $APP --image=$APP
+
+    echo ""
+    echo "Pods:"
+    kubectl get pods
+
+elif [ "$CMD1" == "status" ]; then
+
+    kubectl get pods
+    kubectl get svc
+
+elif [ "$CMD1" == "delete" ]; then
+
+    APP=$CMD2
+    kubectl delete deployment $APP
+
+else
+    echo "Commands:"
+    echo "ai deploy nginx"
+    echo "ai deploy redis"
+    echo "ai status"
+    echo "ai delete nginx"
+fi
