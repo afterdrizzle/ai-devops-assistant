@@ -1,24 +1,33 @@
 # AI DevOps Assistant
 
-AI-powered CLI tool for Kubernetes automation.
-
-## Features
-
-- Deploy apps with simple commands
-- Kubernetes automation
-- AI-assisted operations
+Simple CLI tool that converts natural language into Kubernetes commands.
 
 ## Example
 
 ai deploy nginx
-ai deploy redis
-ai status
-ai delete redis
+
+Output:
+
+kubectl create deployment nginx --image=nginx
 
 ## Tech Stack
 
-- Kubernetes
-- Docker
-- Ollama
-- Llama3
 - Bash
+- Kubernetes
+- kubectl
+- Minikube
+- Open Interpreter
+
+## Demo
+
+Deploy nginx:
+
+ai deploy nginx
+
+Deploy redis:
+
+ai deploy redis
+
+## Author
+
+Anukun Somnuk
